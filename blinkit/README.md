@@ -4,7 +4,7 @@
 
 ## Screenshots
 
-![Blinkit picture](Data_Analysis_projects/blinkit/project-dashboard.jpg)
+![Blinkit picture](project-dashboard.jpg)
 
 
 
