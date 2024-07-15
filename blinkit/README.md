@@ -4,7 +4,7 @@
 
 ## Screenshots
 
-![Blinkit picture](https://drive.google.com/file/d/17srM01ayycmPXmThC2PoqZ2d0cMroF80/view?usp=drivesdk)
+![Blinkit picture](blinkit/project-dashboard.jpg)
 
 
 
