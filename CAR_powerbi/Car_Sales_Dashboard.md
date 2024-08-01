@@ -2,6 +2,9 @@
 
 This Car Sales Dashboard, created using Power BI, provides a comprehensive overview of car sales performance, focusing on various metrics and insights crucial for understanding the market dynamics. Below is an introduction to what this dashboard includes and the key questions it aims to address.
 
+
+![Car Sales Dashboard]("Slide 16_9 - 1.png)
+
 ## Introduction
 
 The Car Sales Dashboard offers a detailed analysis of car sales, providing insights into units sold, revenue generated, market value, and trends over time. This interactive dashboard is designed to help stakeholders make informed decisions by visualizing key performance indicators in an accessible and visually appealing manner.
