@@ -25,4 +25,3 @@ The dataset used in this project, `Telco-Customer-Churn`, contains the following
 - `Contract`: Type of contract the customer has.
 - `MonthlyCharges`: Monthly charges for the customer.
 - Additional demographic and service-related features.
-
