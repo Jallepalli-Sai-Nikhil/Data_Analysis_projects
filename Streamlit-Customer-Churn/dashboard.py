@@ -3,6 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import io
 
+@st.cache
+def load_data():
+    # Replace with the actual path to your churn dataset
+    df = pd.read_csv('path_to_your_churn_dataset.csv')
+    return df
+
 # Custom functions===========================================================================
 def about_df(df):
     # Ensure that we don't sample more rows than are available in the DataFrame
@@ -151,18 +157,7 @@ if __name__ == "__main__":
     # Download sample dataset button
     if st.sidebar.button("Download Sample Dataset"):
         # Create a sample dataset
-        data = {
-            'Age': [22, 45, 32, 41, 36],
-            'Gender': ['Male', 'Female', 'Female', 'Male', 'Male'],
-            'Tenure': [2, 5, 3, 7, 1],
-            'Support Calls': [1, 2, 0, 3, 1],
-            'Total Spend': [500, 1200, 700, 1500, 400],
-            'Payment Delay': [5, 10, 0, 7, 3],
-            'Subscription Type': ['Basic', 'Standard', 'Basic', 'Premium', 'Basic'],
-            'Contract Length': [12, 24, 12, 36, 6],
-            'Churn': [0, 0, 1, 0, 1]
-        }
-        sample_df = pd.DataFrame(data)
+        sample_df = load_data()
         
         # Allow the user to download the dataset as CSV
         csv = sample_df.to_csv(index=False)
