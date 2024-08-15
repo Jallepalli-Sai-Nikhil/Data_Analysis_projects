@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import io
 
-@st.cache
+# Function to load the dataset
+@st.cache_data
 def load_data():
     # Replace with the actual path to your churn dataset
     df = pd.read_csv('path_to_your_churn_dataset.csv')
@@ -21,10 +22,10 @@ def about_df(df):
     size = df.shape[0]
     
     # Get DataFrame info
-    info = df.info()
+    info = df.info(buf=io.StringIO())
     
     # Get column names
-    columns = df.columns
+    columns = df.columns.tolist()
     
     # Count missing values
     missing_values = df.isnull().sum()
@@ -35,7 +36,7 @@ def about_df(df):
     return df_sample, size, info, columns, missing_values, stats
 
 
-# customer statistic function=========================================================================
+# Customer statistics function=========================================================================
 def customer_statistics(df):
     average_age = df['Age'].mean()
     average_tenure = df['Tenure'].mean()
@@ -56,7 +57,7 @@ def customer_statistics(df):
     return statistics
 
 
-# future insights===========================================================================
+# Future insights===========================================================================
 def future_insights(df):
     average_monthly_spend = df['Total Spend'].mean()
     projected_total_spend_next_year = average_monthly_spend * 12 * len(df)
@@ -156,7 +157,7 @@ if __name__ == "__main__":
 
     # Download sample dataset button
     if st.sidebar.button("Download Sample Dataset"):
-        # Create a sample dataset
+        # Load sample dataset
         sample_df = load_data()
         
         # Allow the user to download the dataset as CSV
