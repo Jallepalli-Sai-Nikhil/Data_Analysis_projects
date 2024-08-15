@@ -7,7 +7,7 @@ import io
 @st.cache_data
 def load_data():
     # Replace with the actual path to your churn dataset
-    df = pd.read_csv('path_to_your_churn_dataset.csv')
+    df = pd.read_csv('churn.csv')
     return df
 
 # Custom functions===========================================================================
