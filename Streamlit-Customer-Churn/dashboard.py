@@ -5,25 +5,26 @@ import io
 
 # Custom functions===========================================================================
 def about_df(df):
+    # Ensure that we don't sample more rows than are available in the DataFrame
+    sample_size = min(len(df), 10)
+    
     # Sample view
-    df_sample = df.sample(10)
-
+    df_sample = df.sample(sample_size)
+    
     # Get size
     size = df.shape[0]
-
-    # Get info (this will print info and not return it, so we capture it separately)
-    buffer = io.StringIO()
-    df.info(buf=buffer)
-    info = buffer.getvalue()
-
-    # Get column names and types
-    columns = df.dtypes
-
-    # Get missing values
+    
+    # Get DataFrame info
+    info = df.info()
+    
+    # Get column names
+    columns = df.columns
+    
+    # Count missing values
     missing_values = df.isnull().sum()
-
-    # Get statistics for numerical columns
-    stats = df.describe(include='all')  # Include 'all' to get stats for non-numerical columns as well
+    
+    # Get basic statistics
+    stats = df.describe()
 
     return df_sample, size, info, columns, missing_values, stats
 
